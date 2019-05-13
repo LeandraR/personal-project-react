@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Login from './components/Login';
 import Forked from './components/Forked';
 import Pull from './components/Pull';
+import './App.css';
 
 class App extends Component {
   constructor(){
@@ -65,18 +66,19 @@ class App extends Component {
 
 
     return (
-      <div className="App">
+      <div className="App wrapper">
+        <img src="../../assets/octoface.svg" alt="github cat face" className="gitLogo" />
         <Login
           handleChange={this.handleChange}
           handleSearch={this.handleSearch}
           userName={this.props.userName}
         />
         {this.state.searchName ? (
-          <>
+          <div className="flex-parent-row">
             <Forked results={forkedRepos(this.state.userRepos)} />
             <Pull results={pullRepos(this.state.userRepos)}
             />
-          </>
+          </div>
         ) : (
           "Please try another user name"
         )}

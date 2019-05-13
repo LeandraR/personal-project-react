@@ -29,8 +29,9 @@ class PullRequestStatus extends React.Component {
         }
 
         return (
-            <p className="flex-parent">
-                {pullStatus(this.state.mergeStatus)}
+            <p className="status">
+                <span className={pullStatus(this.state.mergeStatus)}>{pullStatus(this.state.mergeStatus)}</span>
+
             </p>
         )
     }
