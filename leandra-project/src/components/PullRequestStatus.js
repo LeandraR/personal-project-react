@@ -1,39 +1,52 @@
-import React from "react";
-import { connect } from "react-redux";
-import { pullStatus } from "../store/action";
+import React, { Component } from "react";
+// import { connect } from "react-redux";
+// import { pullStatus } from "../store/action";
 
-const PullRequestStatus = (props)=> {
+const PullRequestStatus = (props) =>{
+
+// class PullRequestStatus extends Component {
+    // componentDidMount() {
+    //     this.props.pullStatus(this.props.url)
+    // }
+
+// render(){
+
 
         const pullReqStatus = (merge, status) => {
-            if (merge) {
-                return 'merged'
-            } else if (!merge && status === 'closed') {
-                return 'closed'
-            } else {
+
+            if (!merge && status === 'opened') {
                 return 'open'
+            }else if (!merge && status === 'closed') {
+                return 'closed'
+            } else if (merge) {
+                return 'merged'
             }
         }
 
+
+
         return (
-            <p className="flex-parent">
-                {props ? props.pullStatus(props.status) : ""}
-                {props ? pullReqStatus(props.merged, props.stateReq): ""}
+            <p className="status">
+                <span className={props ? pullReqStatus(props.merged, props.status): ""}>
+                    {props ? pullReqStatus(props.merged, props.status): ""}
+                </span>
             </p>
         )
-
+    // }
 };
 
-const mapStateToProps = state => ({
-    pullStat: state.pullStat,
-    merged: state.merged,
-    stateReq: state.stateReq
-});
 
-const mapDispatchToProps = {
-    pullStatus,
-};
+export default PullRequestStatus;
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(PullRequestStatus);
+// const mapStateToProps = state => ({
+//     stateReq: state.stateReq
+// });
+
+// const mapDispatchToProps = {
+//     pullStatus,
+// };
+
+// export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+// )(PullRequestStatus);

@@ -5,7 +5,7 @@ import SingleRepo from './SingleRepo';
 //TODO: create list component & pass title as prop
 const Forked = props => (
     <div className="flex-parent">
-    {props.forkRepos.length ? "Forked Repos:" : ""}
+    {props.forkRepos.length ? <h2>Forked Repos:</h2> : ""}
         <SingleRepo reposToList={props.forkRepos}/>
     </div>
 );

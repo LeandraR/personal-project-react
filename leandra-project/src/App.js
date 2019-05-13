@@ -2,6 +2,7 @@ import React from "react";
 import Login from "./components/Login";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import './App.css';
 
 function App() {
   return (

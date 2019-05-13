@@ -1,0 +1,49 @@
+.wrapper {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.gitLogo {
+    min-height:150px;
+}
+
+.flex-parent {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.flex-parent-row{
+    display:flex;
+    flex-direction:row;
+}
+
+ul {
+    list-style-type:none;
+}
+.list-item {
+    border:1px solid #888888;
+    box-shadow: 1px 1px #888888;
+    border-radius:5px;
+}
+
+.open {
+    background-color:green;
+}
+
+.closed {
+    background-color:red
+}
+
+.merged {
+    background-color:purple;
+}
+.status {
+    margin:5px;
+}
+
+.pull-list-item {
+    /* padding:5%; */
+}

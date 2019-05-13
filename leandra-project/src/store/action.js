@@ -20,8 +20,8 @@ const popPullStatus = pullStat => ({
   pullStat
 });
 
-export const pullStatus = repoURL => dispatch => {
-  fetch(repoURL)
+export const pullStatus = repo => dispatch => {
+    fetch(repo)
     .then(res => res.json())
     .then(status => dispatch(popPullStatus(status)))
     .catch(err => console.log(err));
