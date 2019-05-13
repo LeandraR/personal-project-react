@@ -27,6 +27,7 @@ ul {
     border:1px solid #888888;
     box-shadow: 1px 1px #888888;
     border-radius:5px;
+    margin:10px;
 }
 
 .open {
