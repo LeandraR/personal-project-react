@@ -4,6 +4,9 @@ import { readUser, setUser, pullStatus } from "../store/action";
 import Forked from './Forked';
 import Pull from './Pull';
 
+//TODO: add error handling for no user
+//TODO: add second fetch for push event URL
+
 class Login extends Component {
   render() {
 
@@ -37,6 +40,7 @@ class Login extends Component {
 
 
     //TODO: error handling if no such user
+    //TODO: add error handling if user doesn't have any fork or pull events
 
     return (
       <div className="wrapper">
